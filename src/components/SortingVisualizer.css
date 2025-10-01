@@ -1,0 +1,139 @@
+.sorting-visualizer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.bars-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  min-height: 420px;
+  width: 100%;
+  padding: 20px;
+  background: #000000;
+  border-radius: 10px;
+  border: 2px solid #333333;
+  overflow-x: auto;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scale(1.05) !important;
+}
+
+.bar-value {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 4px;
+  border-radius: 3px;
+  min-height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.bar-index {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 4px;
+  border-radius: 3px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.legend-color.unsorted {
+  background-color: #868e96;
+}
+
+.legend-color.comparing {
+  background-color: #ff8787;
+}
+
+.legend-color.pivot {
+  background-color: #ff6b6b;
+}
+
+.legend-color.source {
+  background-color: #ffd43b;
+}
+
+.legend-color.target {
+  background-color: #74c0fc;
+}
+
+.legend-color.active-range {
+  background-color: #495057;
+}
+
+.legend-color.sorted {
+  background-color: #51cf66;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bars-container {
+    min-height: 300px;
+    gap: 1px;
+  }
+  
+  .legend {
+    gap: 15px;
+  }
+  
+  .legend-item {
+    font-size: 12px;
+  }
+  
+  .legend-color {
+    width: 16px;
+    height: 16px;
+  }
+}

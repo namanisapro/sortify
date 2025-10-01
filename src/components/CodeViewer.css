@@ -1,0 +1,263 @@
+.code-viewer {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-header h3 {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.code-header h3::before {
+  content: '💻';
+}
+
+.copy-btn {
+  background: rgba(96, 165, 250, 0.2);
+  border: 1px solid #60a5fa;
+  color: #60a5fa;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(96, 165, 250, 0.3);
+  transform: translateY(-1px);
+}
+
+.language-selector {
+  display: flex;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.lang-btn.active {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
+.lang-icon {
+  font-size: 1.1rem;
+}
+
+.lang-name {
+  font-weight: 600;
+}
+
+.code-container {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #000000;
+}
+
+.code-block {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  background: transparent;
+  overflow-x: auto;
+}
+
+.code-block code {
+  color: #e2e8f0;
+}
+
+/* Enhanced Syntax highlighting */
+.code-block .keyword {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.code-block .comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.code-block .string {
+  color: #95e1d3;
+}
+
+.code-block .number {
+  color: #fce38a;
+}
+
+.code-block .function {
+  color: #4ecdc4;
+}
+
+.code-block .operator {
+  color: #ff8787;
+}
+
+/* Language-specific enhancements */
+.language-cpp,
+.language-java {
+  /* Additional styling for C++ and Java */
+}
+
+.language-python {
+  /* Python-specific styling */
+}
+
+.language-go {
+  /* Go-specific styling */
+}
+
+.code-footer {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.info-item strong {
+  color: #e2e8f0;
+}
+
+/* Custom scrollbar for code container */
+.code-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.code-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .code-header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .language-selector {
+    flex-wrap: wrap;
+  }
+  
+  .lang-btn {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .code-block {
+    padding: 15px;
+    font-size: 0.8rem;
+  }
+  
+  .code-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .copy-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* Animation for language switching */
+.code-container {
+  transition: opacity 0.15s ease;
+}
+
+.code-container.transitioning {
+  opacity: 0.3;
+}
+
+.lang-btn.active .lang-icon {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  80% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Hover effects for better interactivity */
+.code-viewer:hover .copy-btn {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.lang-btn:hover .lang-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
