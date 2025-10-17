@@ -559,7 +559,7 @@ func partition(arr []int, low, high int) int {
               <pre style={{
                 margin: 0,
                 color: '#d4d4d4',
-                fontFamily: 'Monaco, Consolas, "Courier New", monospace',
+                fontFamily: 'Monaco, Consolas, Courier New, monospace',
                 fontSize: '14px',
                 lineHeight: '1.5',
                 whiteSpace: 'pre-wrap'
