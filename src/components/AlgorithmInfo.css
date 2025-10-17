@@ -52,22 +52,6 @@
   gap: 8px;
 }
 
-.complexity-section h3::before {
-  content: '⏱️';
-}
-
-.properties-section h3::before {
-  content: '⚙️';
-}
-
-.how-it-works-section h3::before {
-  content: '🔄';
-}
-
-.current-step-section h3::before {
-  content: '👁️';
-}
-
 .complexity-grid {
   display: grid;
   gap: 10px;
@@ -89,7 +73,7 @@
 }
 
 .complexity-item .value {
-  font-family: 'Courier New', monospace;
+  font-family: monospace;
   font-weight: bold;
   padding: 4px 8px;
   border-radius: 4px;
@@ -122,7 +106,7 @@
 }
 
 .space-complexity .value {
-  font-family: 'Courier New', monospace;
+  font-family: monospace;
   font-weight: bold;
   font-size: 1.1rem;
   color: #60a5fa;
@@ -244,30 +228,6 @@
   font-weight: 500;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .algorithm-info {
-    padding: 20px;
-    max-height: none;
-  }
-  
-  .info-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .complexity-item,
-  .property {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  
-  .step {
-    padding-left: 40px;
-  }
-}
-/
-* Enhanced Dry Run Information Styles */
 .dry-run-info {
   margin-top: 15px;
   padding: 15px;
@@ -378,8 +338,27 @@
   color: #60a5fa;
 }
 
-/* Responsive adjustments for dry run info */
 @media (max-width: 768px) {
+  .algorithm-info {
+    padding: 20px;
+    max-height: none;
+  }
+  
+  .info-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .complexity-item,
+  .property {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .step {
+    padding-left: 40px;
+  }
+  
   .dry-run-info {
     padding: 12px;
   }
@@ -402,172 +381,5 @@
   @keyframes moveArrow {
     0%, 100% { transform: rotate(90deg) translateX(0); }
     50% { transform: rotate(90deg) translateX(5px); }
-  }
-}
-/* Co
-de Implementation Section */
-.code-implementation-section {
-  margin-top: 25px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-}
-
-.code-implementation-section h3 {
-  margin: 0;
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
-  font-size: 1.2rem;
-}
-
-.language-tabs {
-  display: flex;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow-x: auto;
-}
-
-.language-tab {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
-}
-
-.language-tab:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e2e8f0;
-}
-
-.language-tab.active {
-  background: rgba(96, 165, 250, 0.2);
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
-}
-
-.lang-icon {
-  font-size: 1.1rem;
-}
-
-.lang-name {
-  font-weight: 600;
-}
-
-.code-display {
-  background: #000000;
-}
-
-.code-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.current-language {
-  color: #e2e8f0;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.copy-code-btn {
-  background: rgba(34, 197, 94, 0.2);
-  border: 1px solid #22c55e;
-  color: #22c55e;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.copy-code-btn:hover {
-  background: rgba(34, 197, 94, 0.3);
-  transform: translateY(-1px);
-}
-
-.code-content {
-  margin: 0;
-  padding: 20px;
-  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  background: #000000;
-  overflow-x: auto;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.code-content code {
-  color: #e2e8f0;
-  white-space: pre;
-}
-
-/* Custom scrollbar for code content */
-.code-content::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.code-content::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.code-content::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-}
-
-.code-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Responsive design for code section */
-@media (max-width: 768px) {
-  .code-implementation-section h3 {
-    padding: 12px 15px;
-    font-size: 1.1rem;
-  }
-  
-  .language-tabs {
-    flex-wrap: wrap;
-  }
-  
-  .language-tab {
-    padding: 10px 15px;
-    font-size: 0.85rem;
-  }
-  
-  .code-header {
-    padding: 10px 15px;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  
-  .copy-code-btn {
-    align-self: stretch;
-    text-align: center;
-  }
-  
-  .code-content {
-    padding: 15px;
-    font-size: 0.8rem;
   }
 }
